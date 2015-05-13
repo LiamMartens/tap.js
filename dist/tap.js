@@ -1,10 +1,11 @@
 (function() {
 	HTMLElement.prototype.tap = function(fn) {
 		var f = function() {
+			var dt = new Date().getTime();
 			if(event.type == "touchstart") {
 				this.isTouchStart = true;
-				this.lastTouchStart = new Date().getTime();
-			} else if((this.isTouchStart==true)&&(new Date().getTime() - this.lastTouchStart < 60)) {
+				this.lastTouchStart = dt;
+			} else if((this.isTouchStart==true)&&(dt - this.lastTouchStart < 65)&&(dt - this.lastTouchStart > 0)) {
 				this.isTouchStart = false;
 				fn.call(this);
 			}
