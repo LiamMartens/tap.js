@@ -5,7 +5,7 @@
 			if(event.type == "touchstart") {
 				this.isTouchStart = true;
 				this.lastTouchStart = dt;
-			} else if((this.isTouchStart==true)&&(dt - this.lastTouchStart < 65)&&(dt - this.lastTouchStart > 0)) {
+			} else if((this.isTouchStart==true)&&(dt - this.lastTouchStart < 30)&&(dt - this.lastTouchStart > 0)) {
 				this.isTouchStart = false;
 				fn.call(this);
 			}
